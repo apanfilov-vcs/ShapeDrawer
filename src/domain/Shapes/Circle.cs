@@ -14,6 +14,12 @@ namespace domain.Shapes
 			Radius = radius;
 		}
 
+		// get user input for radius
+		public Circle()
+		{
+			Console.WriteLine("Please enter the radius of the circle: ");
+			Radius = int.Parse(Console.ReadLine());
+		}
 		public override string Draw(char fillCharacter)
 		{
 			Output = string.Empty;

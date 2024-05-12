@@ -13,8 +13,14 @@ namespace domain.Shapes
         {
             Side = side;
         }
+		// get user input for side
+		public Square()
+		{
+			Console.WriteLine("Please enter the side of the square: ");
+			Side = int.Parse(Console.ReadLine());
+		}
 
-        public override string Draw(char fillCharacter)
+		public override string Draw(char fillCharacter)
         {
             Output = string.Empty;
 

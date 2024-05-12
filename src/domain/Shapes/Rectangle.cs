@@ -15,8 +15,16 @@ namespace domain.Shapes
             Width = width;
             Height = height;
         }
+		// get uset input for width and height
+		public Rectangle()
+		{
+			Console.WriteLine("Please enter the width of the rectangle: ");
+			Width = int.Parse(Console.ReadLine());
+			Console.WriteLine("Please enter the height of the rectangle: ");
+			Height = int.Parse(Console.ReadLine());
+		}
 
-        public override string Draw(char fillCharacter)
+		public override string Draw(char fillCharacter)
         {
             Output = string.Empty;
             

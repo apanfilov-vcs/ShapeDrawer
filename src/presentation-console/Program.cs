@@ -8,10 +8,34 @@ var shapeApp = new ShapeBuilder
     .WithOutputHandler(Console.WriteLine)
     .Build();
 
-var rectangle = shapeApp.CreateRectangle(20, 10);
-var square = shapeApp.CreateSquare(30);
-var cirle = shapeApp.CreateCircle(10);
+Console.WriteLine("Please enter the shape you want to draw (c for Circle, r for Rectangle, s for Square): ");
+string userInput = Console.ReadLine();
 
-rectangle.Draw('@');
-square.Draw('^');
-cirle.Draw('•');
+ShapeType shapeType;
+switch (userInput.ToLower())
+{
+    case "c":
+        shapeType = ShapeType.Circle;
+        break;
+    case "r":
+        shapeType = ShapeType.Rectangle;
+        break;
+    case "s":
+        shapeType = ShapeType.Square;
+        break;
+    default:
+        Console.WriteLine("Invalid input. Please enter c for Circle, r for Rectangle, or s for Square.");
+        return;
+}
+// create shape based on shape type
+Shape shape = shapeType switch
+{
+	ShapeType.Circle => shapeApp.CreateCircle(),
+	ShapeType.Rectangle => shapeApp.CreateRectangle(),
+	ShapeType.Square => shapeApp.CreateSquare(),
+	_ => throw new InvalidOperationException("Invalid shape type.")
+};
+// draw shape
+shape.Draw('*');
+
+

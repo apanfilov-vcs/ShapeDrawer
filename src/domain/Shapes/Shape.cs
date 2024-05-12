@@ -5,13 +5,22 @@ using System.Threading.Tasks;
 
 namespace domain
 {
-    public abstract class Shape
+	// define shape type enum
+	public enum ShapeType
+	{
+		Circle,
+		Rectangle,
+		Square
+	}
+
+	public abstract class Shape
     {
         public Action<string>? OutputHandler { private get; set; }
 
         public string Output { get; set; } = string.Empty;
 
-        public Shape() { }
+		public ShapeType Type { get; set; }
+		public Shape() { }
         
         public virtual string Draw(char fillCharacter) 
         {
