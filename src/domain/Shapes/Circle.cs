@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace domain
+namespace domain.Shapes
 {
 	public class Circle : Shape
 	{
