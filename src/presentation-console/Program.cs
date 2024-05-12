@@ -9,5 +9,9 @@ var shapeApp = new ShapeBuilder
     .Build();
 
 var rectangle = shapeApp.CreateRectangle(20, 10);
+var square = shapeApp.CreateSquare(30);
+var cirle = shapeApp.CreateCircle(10);
 
 rectangle.Draw('@');
+square.Draw('^');
+cirle.Draw('•');

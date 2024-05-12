@@ -16,7 +16,7 @@ namespace domain.Shapes
 
 		public override string Draw(char fillCharacter)
 		{
-			var output = string.Empty;
+			Output = string.Empty;
 
 			for (int i = 0; i <= 2 * Radius; i++)
 			{
@@ -24,17 +24,17 @@ namespace domain.Shapes
 				{
 					if (Math.Pow(i - Radius, 2) + Math.Pow(j - Radius, 2) <= Math.Pow(Radius, 2))
 					{
-						output += fillCharacter;
+						Output += fillCharacter;
 					}
 					else
 					{
-						output += " ";
+						Output += " ";
 					}
 				}
-				output += "\n";
+				Output += "\n";
 			}
 
-			return output;
+			return base.Draw(fillCharacter);
 		}
 
 	}

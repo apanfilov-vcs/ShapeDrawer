@@ -16,18 +16,18 @@ namespace domain.Shapes
 
         public override string Draw(char fillCharacter)
         {
-            var output = string.Empty;
+            Output = string.Empty;
 
             for (var i = 0; i < Side; i++)
             {
                 for (var j = 0; j < Side; j++)
                 {
-                    output += fillCharacter;
+                    Output += fillCharacter;
                 }
-                output += "\n";
+                Output += "\n";
             }
 
-            return output;
+            return base.Draw(fillCharacter);
         }
     }
 }
