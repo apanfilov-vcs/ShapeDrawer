@@ -20,7 +20,7 @@ namespace domain.Shapes
 
             for (var i = 0; i < Side; i++)
             {
-                for (var j = 0; i < Side; j++)
+                for (var j = 0; j < Side; j++)
                 {
                     output += fillCharacter;
                 }
